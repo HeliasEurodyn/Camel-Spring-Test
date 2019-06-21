@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route>
+        <from uri="timer:everysec?period=1s"/>
+        <setBody>
+            <constant>Test</constant>
+        </setBody>
+        <to uri="file:C:/Users/helias/vids"/>
+    </route>
+</routes>
+
+        <!--
+        <route>
+        <from uri="timer:everysec?period=1s"/>
+        <to uri="sqldb:select * from user"/>
+        <split>
+            <simple>${body}</simple>
+            <process ref="bodySerializerProcessor"/>
+            <to uri="file:C:/Users/helias/vids"/>
+        </split>
+    </route>
+
+    </routes>-->
+<!--
+<route>
+    <from uri="timer:everysec?period=1s"/>
+    <to uri="sql:select * from user"/>
+    <process ref="bodySerializerProcessor"/>
+    <to uri="file:C:/Users/helias/vids"/>
+</route>
+-->
